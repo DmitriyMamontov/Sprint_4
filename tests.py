@@ -49,29 +49,29 @@ class TestBooksCollector:
         assert book_collector.books_genre == result
 
     def test_get_book_genre_shows_genre(self, collector_with_book):
-        actual_genre = collector_with_book.get_book_genre(BOOK_TITLE)
-        assert actual_genre == GENRE
+        actual_genre = collector_with_book.get_book_genre(BOOK_TITLE2)
+        assert actual_genre == GENRE2
 
-    def test_get_books_with_specific_genre_shows_books_picked_genre(self, collector_many_book):
-        result = collector_many_book.get_books_with_specific_genre(GENRE5)
+    def test_get_books_with_specific_genre_shows_books_picked_genre(self, collector_with_book):
+        result = collector_with_book.get_books_with_specific_genre(GENRE5)
         assert result == [BOOK_TITLE4, BOOK_TITLE5]
 
-    def test_get_books_for_children_shows_books_with_children_genre(self, collector_many_book):
-        children = collector_many_book.get_books_for_children()
+    def test_get_books_for_children_shows_books_with_children_genre(self, collector_with_book):
+        children = collector_with_book.get_books_for_children()
         assert children == [BOOK_TITLE2]
 
-    def test_get_books_for_children_dont_shows_books_with_not_children_genre(self, collector_many_book):
-        children_books = collector_many_book.get_books_for_children()
+    def test_get_books_for_children_dont_shows_books_with_not_children_genre(self, collector_with_book):
+        children_books = collector_with_book.get_books_for_children()
         assert BOOK_TITLE4 not in children_books
 
     def test_add_book_in_favorites_favorites_add_book(self, collector_with_book):
+        collector_with_book.add_book_in_favorites(BOOK_TITLE)
         favorite = collector_with_book.get_list_of_favorites_books()
         assert BOOK_TITLE in favorite
 
     def test_delete_book_from_favorites_book_not_in_favorites(self, collector_with_book):
-        collector_with_book.delete_book_from_favorites(BOOK_TITLE)
-        assert BOOK_TITLE not in collector_with_book.favorites
-
+        collector_with_book.delete_book_from_favorites(BOOK_TITLE2)
+        assert BOOK_TITLE2 not in collector_with_book.favorites
 
     def test_get_list_of_favorites_books_shows_books_in_favorites(self, collector_many_book_in_favorites):
         favorites = collector_many_book_in_favorites.get_list_of_favorites_books()
