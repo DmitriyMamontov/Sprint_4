@@ -1,0 +1,13 @@
+В проекте мне удалось реализовать тесты для всех методов из задания:
+test_add_new_valid_book_add_one_book тестирует что книга добавляется.
+test_add_new_book_not_genre_shows_not_genre тестирует что для новой книги устанавливается пустой жанр
+test_add_new_book_add_different_quantity_books_shows_all_books тестирует что можно добавить несколько книг
+test_set_book_genre_key_is_book_value_is_genre тестирует что для книг устанавливается соответствующий жанр, если он есть в системе
+test_get_book_genre_shows_genre тестирует возможность получения жанра книги по ее названию
+test_get_books_with_specific_genre_shows_books_picked_genre тестирует вывод книг с определенным жанром
+test_get_book_genre_shows_genre тестирует получение словаря books_genre
+test_get_books_for_children_shows_books_with_children_genre тестирует отображение книг с жанром для детей
+test_get_books_for_children_dont_shows_books_with_not_children_genre тестирует то что книги с не детским жанром не будут отображаться
+test_add_book_in_favorites_favorites_include_book тестирует добавление книги в избранное и отображение списка избранных книг
+test_delete_book_from_favorites_book_not_in_favorites тестирует удаление книги из избранного
+test_get_list_of_favorites_books_shows_books_in_favorites тестирует получение списка избранного с добавленными в него несколькими книгами
